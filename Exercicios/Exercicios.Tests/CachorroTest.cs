@@ -8,7 +8,7 @@ namespace Exercicios.Tests
     public class CachorroTest
     {
         [TestMethod]
-        public void Latir_Test()
+        public void Cachorro_Latir_Test()
         {    
             Cachorro leia = new Cachorro();
             string latido = leia.Latir();
@@ -18,14 +18,14 @@ namespace Exercicios.Tests
             Assert.AreEqual("Au! Au!", latido);
         }
 
-        [TestMethod]
-        public void Comer_Test()
-        {
-            // Considerando que a Leia pesa 1Kg,
-            // e come 5% do seu peso de ração, 
-            // implemnte o Método "QuantoDevoComer" 
-            // para passar no Teste
+        // Considerando que a Leia pesa 1Kg,
+        // e come 5% do seu peso de ração, 
+        // implemnte o Método "QuantoDevoComer" 
+        // para passar no Teste
 
+        [TestMethod]
+        public void Leia_QuantoDevoComer_Test()
+        {
             Cachorro leia = new Cachorro();
             string quantidadeDeRacao = leia.QuantoDevoComer(1);
 
@@ -34,6 +34,8 @@ namespace Exercicios.Tests
             Assert.AreEqual("Como tenho 1Kg, devo comer 50g/dia", 
                 quantidadeDeRacao);
         }
+
+        // Criar os métodos de teste, para a Tequila e para o Yuri
     }
 }
 

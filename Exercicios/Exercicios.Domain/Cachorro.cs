@@ -9,7 +9,7 @@ namespace Exercicios.Domain
             return "Au! Au!";
         }
 
-        public string QuantoDevoComer(int v)
+        public string QuantoDevoComer(int peso)
         {
             throw new NotImplementedException();
         }
