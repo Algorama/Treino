@@ -9,9 +9,10 @@ namespace Exercicios.Domain
             return "Au! Au!";
         }
 
-        public string QuantoDevoComer(int peso)
+        public string QuantoDevoComer(int pesoKg)
         {
-            throw new NotImplementedException();
+            // Calculando 5% do peso em Gramas
+            return $"Como tenho {pesoKg}Kg, devo comer {pesoKg * 50}g/dia";
         }
     }
 }

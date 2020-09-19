@@ -30,14 +30,27 @@ namespace Exercicios.Tests
             string quantidadeDeRacao = leia.QuantoDevoComer(1);
 
             Console.WriteLine(quantidadeDeRacao);
-
-            Assert.AreEqual("Como tenho 1Kg, devo comer 50g/dia", 
-                quantidadeDeRacao);
+            Assert.AreEqual("Como tenho 1Kg, devo comer 50g/dia",  quantidadeDeRacao);
         }
 
-        // Criar os métodos de teste, para a Tequila e para o Yuri
+        [TestMethod]
+        public void Tequila_QuantoDevoComer_Test()
+        {
+            Cachorro tequila = new Cachorro();
+            string quantidadeDeRacao = tequila.QuantoDevoComer(30);
+
+            Console.WriteLine(quantidadeDeRacao);
+            Assert.AreEqual("Como tenho 30Kg, devo comer 1500g/dia", quantidadeDeRacao);
+        }
+
+        [TestMethod]
+        public void Yuri_QuantoDevoComer_Test()
+        {
+            Cachorro yuri = new Cachorro();
+            string quantidadeDeRacao = yuri.QuantoDevoComer(15);
+
+            Console.WriteLine(quantidadeDeRacao);
+            Assert.AreEqual("Como tenho 15Kg, devo comer 750g/dia", quantidadeDeRacao);
+        }
     }
 }
-
-
-
