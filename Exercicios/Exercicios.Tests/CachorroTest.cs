@@ -9,7 +9,7 @@ namespace Exercicios.Tests
     {
         [TestMethod]
         public void Cachorro_Latir_Test()
-        {    
+        {
             Cachorro leia = new Cachorro();
             string latido = leia.Latir();
 
@@ -30,7 +30,7 @@ namespace Exercicios.Tests
             string quantidadeDeRacao = leia.QuantoDevoComer(1);
 
             Console.WriteLine(quantidadeDeRacao);
-            Assert.AreEqual("Como tenho 1Kg, devo comer 50g/dia",  quantidadeDeRacao);
+            Assert.AreEqual("Como tenho 1Kg, devo comer 50g/dia", quantidadeDeRacao);
         }
 
         [TestMethod]
@@ -51,6 +51,18 @@ namespace Exercicios.Tests
 
             Console.WriteLine(quantidadeDeRacao);
             Assert.AreEqual("Como tenho 15Kg, devo comer 750g/dia", quantidadeDeRacao);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Nome_Test()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetNome("Yuri");
+            string nome = yuri.GetNome();
+
+            Console.WriteLine(nome);
+            Assert.AreEqual("Yuri", nome);
         }
     }
 }
