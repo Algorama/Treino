@@ -12,7 +12,7 @@ namespace Exercicios.Tests
         {
             string mensagem = HelloWorld.SayHello();
 
-            Assert.AreEqual("Hello World Github Desktop!", mensagem);
+            Assert.AreEqual("Hello World Github Desktop! (outro dev)", mensagem);
 
             Console.WriteLine(mensagem);
         }
