@@ -49,55 +49,6 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Set_Get_Nome_Test()
-        {
-            var yuri = new Cachorro();
-
-            yuri.SetNome("Yuri");
-            var nome = yuri.GetNome();
-
-            Console.WriteLine(nome);
-            Assert.AreEqual("Yuri", nome);
-        }
-
-        [TestMethod]
-        public void Cachorro_Set_Get_Sexo_Test()
-        {
-            var leia = new Cachorro();
-
-            leia.SetSexo("Fêmea");
-            var sexo = leia.GetSexo();
-
-            Console.WriteLine(sexo);
-            Assert.AreEqual("Fêmea", sexo);
-        }
-
-
-        [TestMethod]
-        public void Cachorro_Set_Get_Porte_Test()
-        {
-            var yuri = new Cachorro();
-
-            yuri.SetPorte("Médio");
-            var porte = yuri.GetPorte();
-
-            Console.WriteLine(porte);
-            Assert.AreEqual("Médio", porte);
-        }
-
-        [TestMethod]
-        public void Cachorro_Set_Get_Idade_Test()
-        {
-            var tequila = new Cachorro();
-
-            tequila.SetIdade(4);
-            var idade = tequila.GetIdade();
-
-            Console.WriteLine(idade);
-            Assert.AreEqual(4, idade);
-        }
-
-        [TestMethod]
         public void Cachorro_Set_Get_Peso_Test()
         {
             var leia = new Cachorro();
@@ -131,18 +82,6 @@ namespace Exercicios.Tests
 
             Console.WriteLine(peso);
             Assert.AreEqual(null, peso);
-        }
-
-        [TestMethod]
-        public void Cachorro_Set_Get_Vacinado_Test()
-        {
-            var leia = new Cachorro();
-
-            leia.SetVacinado(true);
-            var vacinado = leia.GetVacinado();
-
-            Console.WriteLine(vacinado);
-            Assert.AreEqual(true, vacinado);
         }
     }
 }
