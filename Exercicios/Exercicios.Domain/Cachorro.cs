@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Exercicios.Domain
+﻿namespace Exercicios.Domain
 {
     public class Cachorro
     {
@@ -28,17 +26,7 @@ namespace Exercicios.Domain
         private string _sexo;
         #endregion
 
-        #region Raça
-        public void SetRaca(string raca)
-        {
-            _raca = raca;
-        }
-        public string GetRaca()
-        {
-            return _raca;
-        }
-        private string _raca;
-        #endregion
+        public string Raca { set; get; }
 
         #region Porte
         public void SetPorte(string porte)
@@ -65,20 +53,19 @@ namespace Exercicios.Domain
         #endregion
 
         #region Peso
-        public void SetPeso(double? peso)
+        public double? Peso
         {
-            if (peso < 0)
+            set
             {
-                _peso = null;
+                if (value < 0)
+                    _peso = null;
+                else
+                    _peso = value;
             }
-            else
+            get
             {
-                _peso = peso;
+                return _peso;
             }
-        }
-        public double? GetPeso()
-        {
-            return _peso;
         }
         private double? _peso;
         #endregion
