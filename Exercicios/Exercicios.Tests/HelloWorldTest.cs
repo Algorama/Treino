@@ -173,5 +173,106 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, peso);
             Assert.AreEqual(null, vacinado);
         }
+
+        [TestMethod]
+        public void DateTime_Test()
+        {
+            var hoje = DateTime.Today;
+            Console.WriteLine(hoje);
+
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+        }
+
+        [TestMethod]
+        public void DateTime_Add_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+
+            var mais5horas = agora.AddHours(5);
+            Console.WriteLine(mais5horas);
+
+            var amanha = agora.AddDays(1);
+            Console.WriteLine(amanha);
+
+            var ontem = agora.AddDays(-1);
+            Console.WriteLine(ontem);
+
+            var mesQueVem = agora.AddMonths(1);
+            Console.WriteLine(mesQueVem);
+        }
+
+        [TestMethod]
+        public void DateTime_Inicializacao_Test()
+        {
+            var data = new DateTime(2020, 10, 13);
+            Console.WriteLine(data);
+
+            var dataHora = new DateTime(2020, 10, 13, 10, 30, 0);
+            Console.WriteLine(dataHora);
+        }
+
+        [TestMethod]
+        public void DateTime_Convertendo_de_String_Test()
+        {
+            var data = DateTime.Parse("13/10/2020");
+            Console.WriteLine(data);
+
+            var dataHora = DateTime.Parse("13/10/2020 10:30");
+            Console.WriteLine(dataHora);
+        }
+
+        [TestMethod]
+        public void DateTime_Quantidade_Dias_Mes_Test()
+        {
+            var diasMes = DateTime.DaysInMonth(2020, 10);
+            Console.WriteLine(diasMes);
+
+            var ultimoDiaDoMes = new DateTime(2020, 10, diasMes);
+            Console.WriteLine(ultimoDiaDoMes);
+        }
+
+        [TestMethod]
+        public void DateTime_Desmembrando_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+            Console.WriteLine(agora.Year);
+            Console.WriteLine(agora.Month);
+            Console.WriteLine(agora.Day);
+            Console.WriteLine(agora.Hour);
+            Console.WriteLine(agora.Minute);
+            Console.WriteLine(agora.Second);
+            Console.WriteLine(agora.DayOfWeek);
+            Console.WriteLine(agora.DayOfYear);
+        }
+
+        [TestMethod]
+        public void DateTime_Formatacoes_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora.ToString("d")); // short date
+            Console.WriteLine(agora.ToString("G")); // general long datetime
+            Console.WriteLine(agora.ToString("f")); // full short datetime
+            Console.WriteLine(agora.ToString("dd/MM/yyyy"));
+            Console.WriteLine(agora.ToString("dd/MM/yyyy HH:mm"));
+            Console.WriteLine(agora.ToString("MMM/yy"));
+            Console.WriteLine(agora.ToString("MMMM"));            
+        }
+
+        [TestMethod]
+        public void TimeSpan_Test()
+        {
+            var hoje = DateTime.Today;
+            var amanha = hoje.AddDays(1);
+
+            var dif = amanha.Subtract(hoje);
+
+            Console.WriteLine(dif.TotalSeconds);
+            Console.WriteLine(dif.TotalMinutes);
+            Console.WriteLine(dif.TotalHours);
+            Console.WriteLine(dif.TotalDays);
+        }
     }
 }
