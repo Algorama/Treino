@@ -1,4 +1,6 @@
-﻿namespace Exercicios.Domain
+﻿using System;
+
+namespace Exercicios.Domain
 {
     public class Cachorro
     {
@@ -6,7 +8,7 @@
         public string Sexo { get; set; }
         public string Raca { set; get; }
         public string Porte { get; set; }
-        public int Idade { get; set; }
+        public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
         public double? Peso
@@ -39,6 +41,17 @@
         {
             // Calculando 5% do peso em Gramas
             return $"Como tenho {pesoKg}Kg, devo comer {pesoKg * 50}g/dia";
+        }
+
+        public string GetIdade()
+        {
+            var anos = DateTime.Today.Year - DataNascimento.Year;
+            var meses = DateTime.Today.Month - DataNascimento.Month + (12 * anos);
+
+            if(meses < 12)
+                return meses == 1 ? "1 mês" : $"{meses} meses";
+
+            return anos == 1 ? "1 ano" : $"{anos} anos";
         }
     }
 }
