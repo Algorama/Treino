@@ -185,6 +185,21 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
+        public void DateTime_Desmembrando_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+            Console.WriteLine(agora.Year);
+            Console.WriteLine(agora.Month);
+            Console.WriteLine(agora.Day);
+            Console.WriteLine(agora.Hour);
+            Console.WriteLine(agora.Minute);
+            Console.WriteLine(agora.Second);
+            Console.WriteLine(agora.DayOfWeek);
+            Console.WriteLine(agora.DayOfYear);
+        }
+
+        [TestMethod]
         public void DateTime_Add_Test()
         {
             var agora = DateTime.Now;
@@ -231,21 +246,6 @@ namespace Exercicios.Tests
 
             var ultimoDiaDoMes = new DateTime(2020, 10, diasMes);
             Console.WriteLine(ultimoDiaDoMes);
-        }
-
-        [TestMethod]
-        public void DateTime_Desmembrando_Test()
-        {
-            var agora = DateTime.Now;
-            Console.WriteLine(agora);
-            Console.WriteLine(agora.Year);
-            Console.WriteLine(agora.Month);
-            Console.WriteLine(agora.Day);
-            Console.WriteLine(agora.Hour);
-            Console.WriteLine(agora.Minute);
-            Console.WriteLine(agora.Second);
-            Console.WriteLine(agora.DayOfWeek);
-            Console.WriteLine(agora.DayOfYear);
         }
 
         [TestMethod]
