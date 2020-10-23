@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
@@ -52,6 +53,25 @@ namespace Exercicios.Domain
                 return meses == 1 ? "1 mês" : $"{meses} meses";
 
             return anos == 1 ? "1 ano" : $"{anos} anos";
+        }
+
+        public List<string> Validar()
+        {
+            var mensagens = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(Nome))
+                mensagens.Add("Nome do Cachorro é Obrigatório!");
+
+            if (Sexo != "Fêmea" && Sexo != "Macho")
+                mensagens.Add("Sexo do Cachorro deve ser Fêmea ou Macho!");
+
+            if (DataNascimento > DateTime.Today)
+                mensagens.Add("Data de Nascimento do Cachorro deve ser menor que a Data Atual!");
+
+            if (Peso <= 0)
+                mensagens.Add("Peso do Cachorro deve ser maior que zero!");
+
+            return mensagens.Count == 0 ? null : mensagens;
         }
     }
 }
