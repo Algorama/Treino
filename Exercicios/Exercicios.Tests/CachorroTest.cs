@@ -85,7 +85,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_GetIdade_em_Anos()
+        public void Cachorro_GetIdade_em_Anos_Test()
         {
             var cachorro = new Cachorro();
             cachorro.DataNascimento = DateTime.Today.AddYears(-4);
@@ -93,7 +93,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_GetIdade_um_Ano()
+        public void Cachorro_GetIdade_um_Ano_Test()
         {
             var cachorro = new Cachorro();
             cachorro.DataNascimento = DateTime.Today.AddYears(-1);
@@ -101,7 +101,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_GetIdade_em_Meses()
+        public void Cachorro_GetIdade_em_Meses_Test()
         {
             var cachorro = new Cachorro();
             cachorro.DataNascimento = DateTime.Today.AddMonths(-11);
@@ -109,7 +109,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_GetIdade_um_Mes()
+        public void Cachorro_GetIdade_um_Mes_Test()
         {
             var cachorro = new Cachorro();
             cachorro.DataNascimento = DateTime.Today.AddMonths(-1);
@@ -117,72 +117,30 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Nome_Obrigatorio()
+        public void Cachorro_Validar_Test()
         {
-            var cachorro = new Cachorro
+            try
             {
-                Sexo = "Fêmea",
-                DataNascimento = new DateTime(2020, 7, 4),
-                Peso = 2
-            };
-
-            var mensagens = cachorro.Validar();
-            
-            Assert.AreEqual("Nome do Cachorro é Obrigatório!", mensagens[0]);
-            Console.WriteLine(mensagens[0]);
-        }
-
-        [TestMethod]
-        public void Cachorro_Sexo_Deve_Ser_Femea_ou_Macho()
-        {
-            var cachorro = new Cachorro
+                var cachorro = new Cachorro
+                {
+                    Sexo = "XYz",
+                    DataNascimento = DateTime.Today.AddMonths(10),
+                    Peso = 0
+                };
+                cachorro.Validar();
+                Assert.Fail();
+            }
+            catch (Exception ex)
             {
-                Nome = "Léia",
-                Sexo = "Xyz",
-                DataNascimento = new DateTime(2020, 7, 4),
-                Peso = 2
-            };
+                Console.WriteLine(ex.Message);
 
-            var mensagens = cachorro.Validar();
+                var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&
+                         ex.Message.Contains("Sexo do Cachorro deve ser Fêmea ou Macho!") &&
+                         ex.Message.Contains("Data de Nascimento do Cachorro deve ser menor que a Data Atual!") &&
+                         ex.Message.Contains("Peso do Cachorro deve ser maior que zero!");
 
-            Assert.AreEqual("Sexo do Cachorro deve ser Fêmea ou Macho!", mensagens[0]);
-            Console.WriteLine(mensagens[0]);
-        }
-
-        [TestMethod]
-        public void Cachorro_Data_Nascimento_Deve_ser_Menor_que_Hoje()
-        {
-            var cachorro = new Cachorro
-            {
-                Nome = "Léia",
-                Sexo = "Fêmea",
-                DataNascimento = DateTime.Today.AddMonths(10),
-                Peso = 2
-            };
-
-            var mensagens = cachorro.Validar();
-
-            Assert.AreEqual("Data de Nascimento do Cachorro deve ser menor que a Data Atual!", 
-                mensagens[0]);
-            Console.WriteLine(mensagens[0]);
-        }
-
-        [TestMethod]
-        public void Cachorro_Peso_Deve_Ser_Maior_que_Zero()
-        {
-            var cachorro = new Cachorro
-            {
-                Nome = "Léia",
-                Sexo = "Fêmea",
-                DataNascimento = new DateTime(2020, 7, 4),
-                Peso = 0
-            };
-
-            var mensagens = cachorro.Validar();
-
-            Assert.AreEqual("Peso do Cachorro deve ser maior que zero!",
-                mensagens[0]);
-            Console.WriteLine(mensagens[0]);
+                Assert.AreEqual(true, ok);
+            }
         }
     }
 }
