@@ -158,5 +158,26 @@ namespace Exercicios.Tests
 
             Assert.AreEqual("Labrador", tequila.Raca.Nome);
         }
+
+        [TestMethod]
+        public void Cachorro_Associacao_Dono_Teste()
+        {
+            var silvia = new Dono 
+            { 
+                Nome = "Silvia",
+                Email = "silvia@email.com.br",
+                Telefone = "(12) 3456 7890"
+            };
+
+            var tequila = new Cachorro
+            {
+                Nome = "Tequila",
+                Dono = silvia
+            };
+
+            Console.WriteLine(tequila.Dono.Nome);
+
+            Assert.AreEqual("Silvia", tequila.Dono.Nome);
+        }
     }
 }

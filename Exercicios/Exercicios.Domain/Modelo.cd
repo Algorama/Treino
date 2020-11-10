@@ -6,11 +6,12 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AASAAAAAAABAABAAgAAgAAIAAAIAUQAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AASAAAEAAABAABAAgAAgAAIAAAIAUQAAAAAAAAEAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Raca" />
+      <Property Name="Dono" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Raca">
@@ -18,6 +19,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Raca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exercicios.Domain.Dono">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Dono.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
