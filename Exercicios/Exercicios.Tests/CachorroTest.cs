@@ -123,7 +123,6 @@ namespace Exercicios.Tests
             {
                 var cachorro = new Cachorro
                 {
-                    Sexo = "XYz",
                     DataNascimento = DateTime.Today.AddMonths(10),
                     Peso = 0
                 };
@@ -135,7 +134,6 @@ namespace Exercicios.Tests
                 Console.WriteLine(ex.Message);
 
                 var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&
-                         ex.Message.Contains("Sexo do Cachorro deve ser Fêmea ou Macho!") &&
                          ex.Message.Contains("Data de Nascimento do Cachorro deve ser menor que a Data Atual!") &&
                          ex.Message.Contains("Peso do Cachorro deve ser maior que zero!");
 
@@ -178,6 +176,20 @@ namespace Exercicios.Tests
             Console.WriteLine(tequila.Dono.Nome);
 
             Assert.AreEqual("Silvia", tequila.Dono.Nome);
+        }
+
+        [TestMethod]
+        public void Cachorro_Enum_Sexo_Teste()
+        {
+            var leia = new Cachorro
+            {
+                Nome = "Leia",
+                Sexo = Sexo.Femea
+            };
+
+            Console.WriteLine(leia.Sexo);
+
+            Assert.AreEqual(Sexo.Femea, leia.Sexo);
         }
     }
 }
