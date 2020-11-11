@@ -10,9 +10,9 @@
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Property Name="Sexo" />
       <Property Name="Raca" />
       <Property Name="Dono" />
-      <Property Name="Sexo" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Raca">
