@@ -191,5 +191,25 @@ namespace Exercicios.Tests
 
             Assert.AreEqual(Sexo.Femea, leia.Sexo);
         }
+
+        [TestMethod]
+        public void Cachorro_Enum_Raca_Porte_Teste()
+        {
+            var bulldog = new Raca 
+            { 
+                Nome = "Bulldog Francês",
+                Porte = Porte.Medio
+            };
+
+            var yuri = new Cachorro
+            {
+                Nome = "Yuri",
+                Raca = bulldog
+            };
+
+            Console.WriteLine(yuri.Raca.Porte);
+
+            Assert.AreEqual(Porte.Medio, yuri.Raca.Porte);
+        }
     }
 }
