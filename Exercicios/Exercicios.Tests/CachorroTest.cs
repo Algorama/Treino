@@ -142,7 +142,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Associacao_Raca_Teste()
+        public void Cachorro_Associacao_Raca_Test()
         {
             var labrador = new Raca { Nome = "Labrador" };
 
@@ -158,7 +158,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Associacao_Dono_Teste()
+        public void Cachorro_Associacao_Dono_Test()
         {
             var silvia = new Dono 
             { 
@@ -179,7 +179,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Enum_Sexo_Teste()
+        public void Cachorro_Enum_Sexo_Test()
         {
             var leia = new Cachorro
             {
@@ -193,7 +193,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Enum_Raca_Porte_Teste()
+        public void Cachorro_Enum_Raca_Porte_Test()
         {
             var bulldog = new Raca 
             { 
@@ -210,6 +210,19 @@ namespace Exercicios.Tests
             Console.WriteLine(yuri.Raca.Porte);
 
             Assert.AreEqual(Porte.Medio, yuri.Raca.Porte);
+        }
+
+        [TestMethod]
+        public void Cachorro_IPet_Test()
+        {
+            IPet pet = new Cachorro { Nome = "Léia", Peso = 2 };
+
+            Assert.AreEqual("Léia", pet.Nome);
+            Console.WriteLine(pet.Nome);
+
+            var leia = pet as Cachorro;
+            Assert.AreEqual(2, leia.Peso);
+            Console.WriteLine(leia.Peso);
         }
     }
 }
