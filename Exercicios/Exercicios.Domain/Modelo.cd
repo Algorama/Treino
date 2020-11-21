@@ -52,8 +52,8 @@
     <Position X="6.5" Y="0.5" Width="1.75" />
     <AssociationLine Name="Dono" Type="Exercicios.Domain.Dono" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.5" Y="1.875" />
-        <Point X="3.279" Y="1.875" />
+        <Point X="6.5" Y="2.148" />
+        <Point X="3.279" Y="2.148" />
         <Point X="3.279" Y="4.375" />
         <Point X="2.5" Y="4.375" />
       </Path>
@@ -63,8 +63,8 @@
       <FileName>Animal.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Dono" />
       <Property Name="Sexo" />
+      <Property Name="Dono" />
     </ShowAsAssociation>
   </Class>
   <Interface Name="Exercicios.Domain.IPet">
