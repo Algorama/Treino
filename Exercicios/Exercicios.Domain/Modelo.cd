@@ -1,30 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Exercicios.Domain.Cachorro">
-    <Position X="6.25" Y="0.5" Width="2" />
+    <Position X="7.5" Y="3.25" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
-    <AssociationLine Name="Dono" Type="Exercicios.Domain.Dono" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="7.25" Y="3.661" />
-        <Point X="7.25" Y="5.562" />
-        <Point X="2.5" Y="5.562" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AASAAAEAAABAABAAgAAgAAIAAAIAQQAAAAAAQAEAAAA=</HashCode>
+      <HashCode>AASAAAAAAABAABAAAAAgAAIAAAIAQQAAAAAAAAAAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Raca" />
-      <Property Name="Sexo" />
-      <Property Name="Dono" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Exercicios.Domain.Raca">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+    <Position X="10.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAA=</HashCode>
       <FileName>Raca.cs</FileName>
@@ -35,6 +26,12 @@
   </Class>
   <Class Name="Exercicios.Domain.Dono">
     <Position X="0.5" Y="3.75" Width="2" />
+    <AssociationLine Name="Pets" Type="Exercicios.Domain.IPet" FixedToPoint="true">
+      <Path>
+        <Point X="1.062" Y="3.75" />
+        <Point X="1.062" Y="2.44" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAgCAAAQAEgAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Dono.cs</FileName>
@@ -44,16 +41,31 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Gato">
-    <Position X="3.5" Y="2.5" Width="1.75" />
+    <Position X="5" Y="3.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gato.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Sexo" />
-      <Property Name="Dono" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exercicios.Domain.Animal">
+    <Position X="6.5" Y="0.5" Width="1.75" />
+    <AssociationLine Name="Dono" Type="Exercicios.Domain.Dono" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="1.875" />
+        <Point X="3.279" Y="1.875" />
+        <Point X="3.279" Y="4.375" />
+        <Point X="2.5" Y="4.375" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <FileName>Animal.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dono" />
+      <Property Name="Sexo" />
+    </ShowAsAssociation>
   </Class>
   <Interface Name="Exercicios.Domain.IPet">
     <Position X="0.5" Y="0.5" Width="2" />
@@ -62,8 +74,8 @@
       <FileName>IPet.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Dono" />
       <Property Name="Sexo" />
+      <Property Name="Dono" />
     </ShowAsAssociation>
   </Interface>
   <Enum Name="Exercicios.Domain.Sexo">
@@ -74,7 +86,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="Exercicios.Domain.Porte">
-    <Position X="9.5" Y="2.25" Width="1.5" />
+    <Position X="10.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAIAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Porte.cs</FileName>

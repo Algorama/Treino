@@ -3,13 +3,9 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro : IPet
+    public class Cachorro : Animal, IPet
     {
-        public string Nome { get; set; }
-        public Sexo Sexo { get; set; }
-        public string Foto { get; set; }
         public Raca Raca { set; get; }
-        public Dono Dono { set; get; }        
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
@@ -27,8 +23,6 @@ namespace Exercicios.Domain
                 return _peso;
             }
         }
-        
-
         private double? _peso;
 
         public string Latir(short qtdeLatidos)
@@ -41,24 +35,13 @@ namespace Exercicios.Domain
             return latidos.TrimEnd();
         }
 
-        public string QuantoDevoComer(int pesoKg)
+        public override string QuantoDevoComer(int pesoKg)
         {
             // Calculando 5% do peso em Gramas
             return $"Como tenho {pesoKg}Kg, devo comer {pesoKg * 50}g/dia";
         }
 
-        public string GetIdade()
-        {
-            var anos = DateTime.Today.Year - DataNascimento.Year;
-            var meses = DateTime.Today.Month - DataNascimento.Month + (12 * anos);
-
-            if(meses < 12)
-                return meses == 1 ? "1 mês" : $"{meses} meses";
-
-            return anos == 1 ? "1 ano" : $"{anos} anos";
-        }
-
-        public void Validar()
+        public override void Validar()
         {
             var mensagens = new List<string>();
 
@@ -71,7 +54,7 @@ namespace Exercicios.Domain
             if (Peso <= 0)
                 mensagens.Add("Peso do Cachorro deve ser maior que zero!");
 
-            if(mensagens.Count > 0)
+            if (mensagens.Count > 0)
             {
                 var exceptionMessage = string.Empty;
                 foreach (var msg in mensagens)
@@ -79,6 +62,17 @@ namespace Exercicios.Domain
 
                 throw new Exception(exceptionMessage);
             }
+        }
+
+        public string GetIdade()
+        {
+            var anos = DateTime.Today.Year - DataNascimento.Year;
+            var meses = DateTime.Today.Month - DataNascimento.Month + (12 * anos);
+
+            if(meses < 12)
+                return meses == 1 ? "1 mês" : $"{meses} meses";
+
+            return anos == 1 ? "1 ano" : $"{anos} anos";
         }
     }
 }
