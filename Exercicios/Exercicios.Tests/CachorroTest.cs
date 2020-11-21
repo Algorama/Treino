@@ -133,7 +133,7 @@ namespace Exercicios.Tests
             {
                 Console.WriteLine(ex.Message);
 
-                var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&
+                var ok = ex.Message.Contains("Nome do Pet é Obrigatório!") &&
                          ex.Message.Contains("Data de Nascimento do Cachorro deve ser menor que a Data Atual!") &&
                          ex.Message.Contains("Peso do Cachorro deve ser maior que zero!");
 
