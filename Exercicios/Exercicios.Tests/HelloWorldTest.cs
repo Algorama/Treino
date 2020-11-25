@@ -474,5 +474,11 @@ namespace Exercicios.Tests
                 Console.WriteLine("Fim do Teste!");
             }
         }
+
+        [TestMethod]
+        public void Classe_Abstrata_Test()
+        {
+            //var obj = new Animal();
+        }
     }
 }
