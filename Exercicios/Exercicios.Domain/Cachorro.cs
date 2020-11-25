@@ -9,22 +9,6 @@ namespace Exercicios.Domain
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
-        public double? Peso
-        {
-            set
-            {
-                if (value < 0)
-                    _peso = null;
-                else
-                    _peso = value;
-            }
-            get
-            {
-                return _peso;
-            }
-        }
-        private double? _peso;
-
         public string Latir(short qtdeLatidos)
         {
             var latidos = "";
@@ -35,10 +19,10 @@ namespace Exercicios.Domain
             return latidos.TrimEnd();
         }
 
-        public override string QuantoDevoComer(int pesoKg)
+        public override string QuantoDevoComer()
         {
             // Calculando 5% do peso em Gramas
-            return $"Como tenho {pesoKg}Kg, devo comer {pesoKg * 50}g/dia";
+            return $"Como tenho {Peso}Kg, devo comer {Peso * 50}g/dia";
         }
 
         public override void Validar()

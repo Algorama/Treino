@@ -4,9 +4,10 @@
     {
         string Nome { get; set; }
         Sexo Sexo { get; set; }
-        string Foto { set; get; }
-        Dono Dono { set; get; }        
-        string QuantoDevoComer(int pesoKg);
+        string Foto { get; set; }
+        Dono Dono { get; set; }
+        double? Peso { get; set; }
+        string QuantoDevoComer();
         void Validar();
     }
 }

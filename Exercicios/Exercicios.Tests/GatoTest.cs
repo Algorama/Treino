@@ -36,5 +36,15 @@ namespace Exercicios.Tests
                 Assert.AreEqual(true, ok);
             }
         }
+
+        [TestMethod]
+        public void Gato_QuantoDevoComer_Test()
+        {
+            var gato = new Gato { Peso = 6 };
+            var quantidadeDeRacao = gato.QuantoDevoComer();
+
+            Console.WriteLine(quantidadeDeRacao);
+            Assert.AreEqual("Como tenho 6Kg, devo comer 60g/dia", quantidadeDeRacao);
+        }
     }
 }

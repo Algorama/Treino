@@ -14,9 +14,10 @@ namespace Exercicios.Domain
             return miados.TrimEnd();
         }
 
-        public override string QuantoDevoComer(int pesoKg)
+        public override string QuantoDevoComer()
         {
-            throw new NotImplementedException();
+            // Calculando 1% do peso em Gramas
+            return $"Como tenho {Peso}Kg, devo comer {Peso * 10}g/dia";
         }
     }
 }
