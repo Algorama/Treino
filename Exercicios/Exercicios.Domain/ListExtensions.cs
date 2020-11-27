@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public static class Helpers
+    public static class ListExtensions
     {
-        public static Exception ConvertListToException(List<string> mensagens)
+        public static Exception ToException(this List<string> mensagens)
         {
             var exceptionMessage = string.Empty;
             foreach (var msg in mensagens)
