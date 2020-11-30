@@ -23,7 +23,7 @@ namespace Exercicios.Tests
             silvia.AddPet(mingau);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
 
             Assert.AreEqual(4, silvia.Pets.Count);
             Assert.AreEqual(silvia, leia.Dono);
@@ -50,7 +50,7 @@ namespace Exercicios.Tests
             silvia.RemovePet(vesgo);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
 
             Assert.AreEqual(2, silvia.Pets.Count);
             Assert.AreEqual(silvia, leia.Dono);
@@ -72,7 +72,7 @@ namespace Exercicios.Tests
             silvia.AddPet(yuri, leia, vesgo, mingau);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
 
             Assert.AreEqual(4, silvia.Pets.Count);
             Assert.AreEqual(silvia, leia.Dono);
@@ -96,7 +96,7 @@ namespace Exercicios.Tests
             silvia.RemovePet(yuri, leia, vesgo, mingau);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
 
             Assert.AreEqual(0, silvia.Pets.Count);
             Assert.AreEqual(null, leia.Dono);
