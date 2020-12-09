@@ -3,6 +3,7 @@ using System;
 using Exercicios.Domain;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Exercicios.Tests
 {
@@ -508,6 +509,60 @@ namespace Exercicios.Tests
         {
             var msg = File.ReadAllText("C:\\Aula030\\hello.txt");
             Console.WriteLine(msg);
+        }
+
+        [TestMethod]
+        public void Async_Await_Tarefa_Test()
+        {
+            var retorno1 = HelloWorld.Tarefa("Um", 5);
+            Console.WriteLine(retorno1);
+
+            var retorno2 = HelloWorld.Tarefa("Dois", 3);
+            Console.WriteLine(retorno2);
+        }
+
+        [TestMethod]
+        public async Task Async_Await_TarefaAsync_1_Test()
+        {
+            Task<string> um = HelloWorld.TarefaAsync("Um", 5);
+
+            Console.WriteLine("Código que pode ser executado independente do retorno da Tarefa Um");
+
+            // E Aqui esperamos a tarefaDemorada Terminar
+            string result = await um;
+
+            // E usamos o seu retorno
+            Console.WriteLine(result);
+        }
+
+        [TestMethod]
+        public async Task Async_Await_TarefaAsync_2_Test()
+        {
+            Task<string> um = HelloWorld.TarefaAsync("Um", 5);
+            Task<string> dois = HelloWorld.TarefaAsync("Dois", 5);
+
+            string resultUm = await um;
+            Console.WriteLine(resultUm);
+
+            string resultDois = await dois;
+            Console.WriteLine(resultDois);
+        }
+
+        [TestMethod]
+        public async Task Async_Await_TarefaAsync_3_Test()
+        {
+            Task<string> um = HelloWorld.TarefaAsync("Um", 5);
+            Task<string> dois = HelloWorld.TarefaAsync("Dois", 10);
+
+            string resultUm = await um;
+            Console.WriteLine(resultUm);
+            Task<string> tres = HelloWorld.TarefaAsync("Tres", 5);
+
+            string resultDois = await dois;
+            Console.WriteLine(resultDois);
+
+            string resultTres = await tres;
+            Console.WriteLine(resultTres);
         }
     }
 }

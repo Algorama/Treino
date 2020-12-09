@@ -1,4 +1,8 @@
-﻿namespace Exercicios.Domain
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Exercicios.Domain
 {
     public static class HelloWorld
     {
@@ -16,5 +20,34 @@
         {
             cachorro.Nome = "Tequila";
         }
+
+        public static string Tarefa(string tarefa, int passos)
+        {
+            Console.WriteLine($"## Tarefa {tarefa} INICIADA!");
+
+            for (var i = passos; i > 0; i--)
+            {
+                // faz a thread esperar 1 segundo
+                Thread.Sleep(1000);
+                Console.WriteLine($"      >> Tarefa {tarefa} executando... {i}");
+            }
+
+            return $"## Tarefa {tarefa} CONCLUÍDA!";
+        }
+
+        public static async Task<string> TarefaAsync(string tarefa, int passos)
+        {
+            Console.WriteLine($"## Tarefa {tarefa} INICIADA!");
+
+            for (var i = passos; i > 0; i--)
+            {
+                // faz a thread esperar 1 segundo
+                await Task.Delay(1000);
+                Console.WriteLine($"      >> Tarefa {tarefa} executando... {i}");
+            }
+
+            return $"## Tarefa {tarefa} CONCLUÍDA!";
+        }
+
     }
 }

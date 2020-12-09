@@ -14,7 +14,7 @@ namespace Exercicios.Domain
         public static void CarregaPetsDoArquivo(this List<IPet> pets, string caminho)
         {
             var donos = new List<Dono>();
-            var racas = new List<Raca>();
+            var racas = new List<Raca>();            
 
             var linhas = File.ReadAllLines(caminho);
             for (var i = 1; i < linhas.Length; i++)
